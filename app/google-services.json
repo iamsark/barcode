@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "559995037174",
+    "project_id": "iotbarcode-cd6a4",
+    "storage_bucket": "iotbarcode-cd6a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559995037174:android:e222dd5aab6346c70cd3d7",
+        "android_client_info": {
+          "package_name": "com.iot.iotbarcode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559995037174-8aaha3090ljg2uo0gvoq7o77vt9i4qkn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfYQ1zMv7-1eJUoRO-Af4cLbE090AGVWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559995037174-8aaha3090ljg2uo0gvoq7o77vt9i4qkn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
