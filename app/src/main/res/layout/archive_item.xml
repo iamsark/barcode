@@ -3,7 +3,8 @@
     android:id="@+id/name"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/iot_border_bottom_grey"
     android:padding="10dip"
+    android:textColor="#777"
     android:textSize="16dip"
-    android:textStyle="bold" >
-</TextView>
+    android:textStyle="bold"></TextView>

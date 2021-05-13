@@ -43,15 +43,7 @@ class LiveBarcodeScanningActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_live_barcode)
 
-        val permission = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA)
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(this,
-                    arrayOf(Manifest.permission.CAMERA),
-                    200)
-        }
-
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 200)
     }
 
     private fun init() {
@@ -76,10 +68,6 @@ class LiveBarcodeScanningActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         setUpWorkflowModel()
-    }
-
-    private fun setupPermissions() {
-
     }
 
     override fun onResume() {

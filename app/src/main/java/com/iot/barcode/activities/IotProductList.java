@@ -22,7 +22,7 @@ public class IotProductList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iot_product_list);
-        populateProductListView();
+
         findViewById(R.id.iot_create_product_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,12 +31,17 @@ public class IotProductList extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        populateProductListView();
+    }
+
     private void populateProductListView() {
         IotDbManager iotDB = new IotDbManager(getApplicationContext()).open();
         ArrayList<IotProduct> lp = iotDB.list();
         findViewById(R.id.empty_text_view).setVisibility(View.GONE);
-
-        Log.d("IotProductList", "Product size : "+ lp.size());
+        iotDB.close();
 
         if (lp.size() > 0) {
             findViewById(R.id.product_list_view).setVisibility(View.VISIBLE);

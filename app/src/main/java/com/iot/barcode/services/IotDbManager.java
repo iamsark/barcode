@@ -85,17 +85,19 @@ public class IotDbManager {
         Cursor c = fetch();
         IotProduct product = null;
         ArrayList<IotProduct> list = new ArrayList<IotProduct>();
-        while (c.moveToNext()) {
-            product = new IotProduct();
-            product.setId(c.getInt(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_ID)));
-            product.setName(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_NAME)));
-            product.setCode(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_CODE)));
-            product.setPrice(c.getFloat(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_PRICE)));
-            product.setCat(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_CATEGORY)));
-            product.setBrand(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_BRAND)));
-            product.setColor(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_COLOR)));
-            product.setDesc(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_DESCRIPTION)));
-            list.add(product);
+        if (c != null && c.getCount() > 0) {
+            do {
+                product = new IotProduct();
+                product.setId(c.getInt(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_ID)));
+                product.setName(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_NAME)));
+                product.setCode(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_CODE)));
+                product.setPrice(c.getFloat(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_PRICE)));
+                product.setCat(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_CATEGORY)));
+                product.setBrand(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_BRAND)));
+                product.setColor(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_COLOR)));
+                product.setDesc(c.getString(c.getColumnIndex(IotBarcodeDbHelper.PRODUCT_COLUMN_DESCRIPTION)));
+                list.add(product);
+            } while(c.moveToNext());
         }
         return list;
     }
